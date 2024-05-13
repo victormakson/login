@@ -32,7 +32,7 @@ class LoginScreen(BoxLayout):
         login_label.halign = 'center'
         self.add_widget(login_label)
 
-        image = Image(source=r"C:\Users\aluno.sesipaulista\Pictures\R.png", allow_stretch=True)
+        image = Image(source=r"C:\Users\aluno.sesipaulista\Desktop\login\imagens e icones\login.png", allow_stretch=True)
         image.size_hint = (1, 2.5)
         self.add_widget(image)
 
@@ -40,11 +40,11 @@ class LoginScreen(BoxLayout):
         self.add_widget(form_grid)
 
         form_grid.add_widget(Label(text="Nome de usuário:", font_name="Arial", color=get_color_from_hex('#4F4F4F')))
-        self.username_input = TextInput(hint_text="Nome de usuário...")
+        self.username_input = TextInput(hint_text="Nome de usuário...", font_size=24, height=35, size_hint_y=None)
         form_grid.add_widget(self.username_input)
 
         form_grid.add_widget(Label(text="Senha:", font_name='Arial', color=get_color_from_hex('#4F4F4F')))
-        self.senha_input = TextInput(hint_text="Digite sua senha...", password=True)
+        self.senha_input = TextInput(hint_text="Digite sua senha...", password=True, font_size=24, height=35, size_hint_y=None)
         form_grid.add_widget(self.senha_input)
 
         button_grid = GridLayout(cols=2, spacing=10)
@@ -69,7 +69,7 @@ class RegisterScreen(BoxLayout):
         self.spacing = 20
 
         # Create a background image
-        self.background_image = Image(source=r"C:\Users\aluno.sesipaulista\Pictures\background_image.png", allow_stretch=True)
+        self.background_image = Image(source=r"C:\Users\aluno.sesipaulista\Desktop\login\imagens e icones\OIP.jpg", allow_stretch=True)
         self.background_image.size_hint = (1, 1)
         self.add_widget(self.background_image)
 
@@ -85,31 +85,30 @@ class RegisterScreen(BoxLayout):
         register_label.halign = 'center'
         self.add_widget(register_label)
 
-        form_grid = GridLayout(cols=2, spacing=10)
+        form_grid = GridLayout(cols=4, spacing=10)
         self.add_widget(form_grid)
 
         form_grid.add_widget(Label(text="Nome:", font_size=18, font_name="Arial", color=get_color_from_hex('#4F4F4F')))
-        self.nome_input = TextInput(hint_text="Nome...", font_size=16)
+        self.nome_input = TextInput(hint_text="Nome...", font_size=24, height=40, size_hint_y=None)
         form_grid.add_widget(self.nome_input)
 
         form_grid.add_widget(Label(text="Data de Nascimento:", font_size=18, font_name="Arial", color=get_color_from_hex('#4F4F4F')))
-        self.data_nascimento_input = TextInput(hint_text="DD/MM/YYYY...", font_size=16)
+        self.data_nascimento_input = TextInput(hint_text="DD/MM/YYYY...", font_size=24, height=40, size_hint_y=None)
         form_grid.add_widget(self.data_nascimento_input)
 
         form_grid.add_widget(Label(text="CPF:", font_size=18, font_name="Arial", color=get_color_from_hex('#4F4F4F')))
-        self.cpf_input = TextInput(hint_text="CPF...", font_size=16)
+        self.cpf_input = TextInput(hint_text="CPF...", font_size=24, height=40, size_hint_y=None)
         form_grid.add_widget(self.cpf_input)
 
         form_grid.add_widget(Label(text="RG:", font_size=18, font_name="Arial", color=get_color_from_hex('#4F4F4F')))
-        self.rg_input = TextInput(hint_text="RG...", font_size=16)
+        self.rg_input = TextInput(hint_text="RG...", font_size=24, height=40, size_hint_y=None)
         form_grid.add_widget(self.rg_input)
 
-        button_grid = GridLayout(cols=1, spacing=10)
+        button_grid = GridLayout(cols=2, spacing=10)
         self.add_widget(button_grid)
 
-        self.register_button = Button(text="Cadastrar", background_color=(0, 1, 0, 0.75), font_size=18)
+        self.register_button = Button(text="Cadastrar", background_color=(0, 1, 0, 0.75), font_size=18, height=35, size_hint=(100, 100), size=(200, 50), pos_hint={'center_y': 1.5, 'center_x': 0.5})
         button_grid.add_widget(self.register_button)
-
 class MyApp(App):
     def build(self):
         return LoginScreen()
